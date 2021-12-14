@@ -1,0 +1,59 @@
+<nav id="logo" class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a routerLink="/home">
+            <img src="../../assets/Logo1-semfundo.png" alt="Transformation Space">
+        </a>
+    </div>
+</nav>
+
+<nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="navbar-nav text-center list-unstyled list-inline">
+                <li class="col-md-12">
+                    <a href="">______________________________________________________________________________________________________________________________________</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-md-12">
+            <ul routerLinkActive="active" class="navbar-nav text-center list-unstyled list-inline">
+                <li class="nav-link col-md-0">
+                </li>
+                <li class="nav-link col-md-1">
+                    <a routerLink="/" href="#">Home</a>
+                </li>                
+                <li class="nav-link col-md-2">
+                    <a routerLink="/servicos" href="#">Especialidades</a>
+                </li>
+                <li class="nav-link col-md-2">
+                    <a routerLink="/produtos" href="#">Serviços</a>
+                </li>
+                <li class="nav-link col-md-2">
+                    <a routerLink="/agenda" href="#">Agenda</a>
+                </li>
+
+                <li class="nav-link col-md-2">
+                    <a routerLink="/cliente" href="#">Clientes</a>
+                </li>
+
+                <li class="nav-link col-md-2">
+                    <a routerLink="/funcionario" href="#">Funcionários</a>
+                </li>
+
+                <li *ngIf="esconderLogin" class="nav-link col-md-2">
+                    <a routerLink="/login" href="#">Login</a>
+                </li>
+                <li *ngIf="mostrarLogin" class="nav-link col-md-2">
+                    <a (click)="logoff()" routerLink="/login" href="#">Sair</a>
+                </li>
+                <li class="nav-link col-md-1">
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</nav>
+

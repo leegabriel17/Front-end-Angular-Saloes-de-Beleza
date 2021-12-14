@@ -1,0 +1,85 @@
+<div class="container" id="agendamento">
+    <br><h1 id="titulo">Agendar</h1>
+    <div class="form-row">
+        <div class="col-md-4">            
+            <div class="form-row">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <label for="">Data</label>
+                    <input [(ngModel)]="agenda.data" class="form-control" id="date" type="date">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-row">
+                <div class="col-md-2"></div>
+                <div class="col-md-7">
+                    <label for="">Horário</label>
+                    <input [(ngModel)]="agenda.hora" class="form-control" type="time" id="appt" name="appt"
+                    min="09:00" max="18:00" required>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-row">
+                <div class="col-md-0"></div>
+                <div class="col-md-8">
+                    <label for="">Serviço</label>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Selecione...</option>
+                        <option value="1">Relaxamento</option>
+                        <option value="2">Massagem</option>
+                        <option value="3">Cortes/Penteados</option>
+                        <option value="4">Maquiagem</option>
+                        <option value="4">Mãos</option>
+                        <option value="4">Pés</option>
+                        <option value="4">Barba/Bigode</option>
+                        <option value="4">Corte Masculino</option>
+
+                      </select>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+
+        <div class="col-md-4">            
+            <div class="form-row">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <div class="md-form md-outline form-lg">
+                        <input id="form-lg" class="form-control form-control-lg" type="text" mdbInput>
+                        <label for="form-lg">CPF - Cliente</label>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-row">
+                <div class="col-md-2"></div>
+                <div class="col-md-7">
+                    <div class="md-form md-outline form-lg">
+                        <input id="form-lg" class="form-control form-control-lg" type="text" mdbInput>
+                        <label for="form-lg">CPF - Funcionário</label>
+                      </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="off" *ngIf="deslogado" class="alert alert-danger" role="alert">
+        Agendamento inválido.
+    </div>
+<div>
+</div>
+<br>
+    <button (click)="verificar()" type="button" class="btn btn-outline-secondary">Agendar serviço</button><br>
+    <button routerLink="/gagenda" type="submit" class="btn btn-outline-secondary">Gerenciar Agendas</button>
+</div>
+
+
+
+

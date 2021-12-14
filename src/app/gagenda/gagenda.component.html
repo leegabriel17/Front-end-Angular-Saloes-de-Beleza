@@ -1,0 +1,83 @@
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Gerenciar Agendas</h3>
+    <div class="container">
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <div class="md-form">
+        <input
+          type="text"
+          [(ngModel)]="searchText"
+          class="form-control"
+          id="search"
+          mdbInput
+        />
+        <label for="search">Buscar ...</label>
+      </div>
+    </div>
+  </div>
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2">
+          <a class="text-success" (click)="add()">
+          </a>
+        </span>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <tr>
+            <th class="text-center">Data Agendada</th>
+            <th class="text-center">Serviços</th>
+            <th class="text-center">Cliente</th>
+            <th class="text-center">Funcionario</th>
+          </tr>
+          <tr *ngFor="let person of personList; let id = index">
+            <td>
+              <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'age', $event)">{{person.age}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'companyName', $event)">{{person.companyName}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'country', $event)">{{person.country}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
+            </td>
+            <td>
+              <span class="table-up">
+                <a class="indigo-text">
+                  <mdb-icon fas icon="long-arrow-alt-up"></mdb-icon>
+                </a>
+              </span>
+              <span class="table-down">
+                <a class="indigo-text">
+                  <mdb-icon fas icon="long-arrow-alt-down"></mdb-icon>
+                </a>
+              </span>
+            </td>
+            <td>
+              <span class="table-remove">
+                <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remover</button>
+                <button type="button" mdbBtn color="blue" rounded="true" size="sm" class="my-0" (click)="remove(id)">Editar</button>
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination pg-blue justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" tabindex="-1" mdbWavesEffect>Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" mdbWavesEffect>1</a></li>
+        <li class="page-item"><a class="page-link" mdbWavesEffect>2</a></li>
+        <li class="page-item"><a class="page-link" mdbWavesEffect>3</a></li>
+        <li class="page-item">
+          <a class="page-link" mdbWavesEffect>Next</a>
+        </li>
+      </ul>
+    </nav>
+    <br><br><br><br><br><br><br><br><br>
+  </div>
+  <!-- Editable table -->

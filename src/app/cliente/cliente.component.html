@@ -1,0 +1,69 @@
+
+  <div id="cadastro">
+    <br>
+     <h1 id="titulo">Cadastro de Clientes</h1>
+    </div>
+
+<div class="container">
+
+    <!-- Large outline input -->
+  <div class="md-form md-outline form-lg">
+    <input id="form-lg" class="form-control form-control-lg" type="text" mdbInput>
+    <label for="form-lg">Nome</label>
+  </div>
+
+  <div class="md-form md-outline form-lg">
+    <input id="form-lg" class="form-control form-control-lg" type="text" mdbInput>
+    <label for="form-lg">CPF</label>
+  </div>
+
+  <div class="md-form md-outline form-lg">
+    <input type="number" class="form-control" id="numberInputEx" mdbInput>
+    <label for="form-lg">Telefone</label>
+  </div>
+
+  <div class="md-form md-outline form-lg">
+    <mdb-icon fas icon="envelope"></mdb-icon>
+    <input type="text" id="inputIconEx1" class="form-control" mdbInput placeholder="nome@dominio.com">
+    <label for="inputIconEx1">E-mail</label>
+    <small id="emailHelp2" class="form-text text-muted">Nunca compartilharemos seu e-mail com ninguém.</small>
+  </div>
+
+  <!-- Default column sizing form -->
+<form>
+  <div class="form-row">
+    <div class="col-7">
+      <input mdbInput type="text" class="form-control" placeholder="Cidade">
+    </div>
+    <div class="col">
+      <input mdbInput type="text" class="form-control" placeholder="Estado">
+    </div>
+    <div class="col">
+      <input mdbInput type="text" class="form-control" placeholder="CEP">
+    </div>
+  </div>
+</form>
+<br>
+<form>
+  <div class="form-row">
+    <div class="col-7">
+      <input mdbInput type="text" class="form-control" placeholder="Bairro">
+    </div>
+    <div class="col">
+      <input mdbInput type="text" class="form-control" placeholder="Logradouro">
+    </div>
+    <div class="col">
+      <input mdbInput type="number" class="form-control" placeholder="Número">
+    </div>
+
+    
+  </div>
+  <br><br>
+  <button align-items= "center" (click)="verificar()" type="button" class="btn btn-outline-secondary">Salvar Cliente</button> <br>
+  <button routerLink="/gcliente" type="submit" class="btn btn-outline-secondary">Gerenciar Clientes</button>
+</form>
+
+<div >
+
+</div>
+

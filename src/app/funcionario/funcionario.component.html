@@ -1,0 +1,79 @@
+
+  <div id="cadastro">
+    <br>
+     <h1 id="titulo">Cadastro de Funcionários</h1>
+    </div>
+
+<div class="container">
+
+    <!-- Large outline input -->
+  <div class="md-form md-outline form-lg">
+    <input id="form-lg" class="form-control form-control-lg" type="text" mdbInput>
+    <label for="form-lg">Nome</label>
+  </div>
+
+  <div class="md-form md-outline form-lg">
+    <input id="form-lg" class="form-control form-control-lg" type="text" mdbInput>
+    <label for="form-lg">CPF</label>
+  </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Especialidade</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+          <option selected>Selecione...</option>
+          <option value="1">Spa</option>
+          <option value="2">Eventos</option>
+          <option value="3">Cuidados Femininos</option>
+          <option value="4">Cuidados Masculinos</option>
+        </select>
+    </div><br>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Expediente</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+          <option selected>Selecione...</option>
+          <option value="1">Manhã - Tarde</option>
+          <option value="2">Tarde  - Noite</option>
+          <option value="3">Noite - Madrugada</option>
+        </select>
+    </div><br>
+
+      <!-- Default column sizing form -->
+<form>
+  <div class="form-row">
+    <div class="col-7">
+      <input mdbInput type="text" class="form-control" placeholder="Cidade">
+    </div>
+    <div class="col">
+      <input mdbInput type="text" class="form-control" placeholder="Estado">
+    </div>
+    <div class="col">
+      <input mdbInput type="text" class="form-control" placeholder="CEP">
+    </div>
+  </div>
+</form>
+<br>
+<form>
+  <div class="form-row">
+    <div class="col-7">
+      <input mdbInput type="text" class="form-control" placeholder="Bairro">
+    </div>
+    <div class="col">
+      <input mdbInput type="text" class="form-control" placeholder="Logradouro">
+    </div>
+    <div class="col">
+      <input mdbInput type="number" class="form-control" placeholder="Número">
+    </div>
+
+    
+  </div>
+  <br><br>
+  <button align-items= "center" (click)="verificar()" type="button" class="btn btn-outline-secondary">Salvar Funcionário</button><br>
+  <button routerLink="/gfuncionario" type="submit" class="btn btn-outline-secondary">Gerenciar Funcionários</button>
+</form>
+</div>
+

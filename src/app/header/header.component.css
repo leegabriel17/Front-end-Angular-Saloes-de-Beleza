@@ -1,0 +1,28 @@
+#logo {
+    position: relative;
+    height: 160px;
+}
+
+#menu {
+    position: relative;
+    height: 80px;
+}
+
+img {
+    padding-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container, .row {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: inline-end;
+}
+
+a {
+    color: #16082f
+    
+}

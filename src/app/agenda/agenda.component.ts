@@ -1,4 +1,3 @@
-import { MarcarService } from './marcar.service';
 import { AuthService } from './../login/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -18,8 +17,7 @@ export class AgendaComponent implements OnInit {
 
   verificar(){
     this.deslogado = this.authService.offline;
-    if(this.authService.online == true){
-      this.marcarService.verificar(this.agenda)
+    if(this.authService.online == true){      
       this.route.navigate(['agenda/confirmar'])
     }
   }
@@ -27,8 +25,7 @@ export class AgendaComponent implements OnInit {
 
   constructor(
     private route: Router,
-    private authService: AuthService,
-    private marcarService: MarcarService) { }
+    private authService: AuthService) { }
 
   ngOnInit() {    
     console.log(`Está logado? ${this.logado}`)

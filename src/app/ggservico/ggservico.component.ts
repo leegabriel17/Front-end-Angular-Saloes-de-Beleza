@@ -11,7 +11,7 @@ export class GgservicoComponent implements OnInit {
 
   servicosList: ServicoList;
 
-  constructor(private servico: ServicoService ) { }
+  constructor(private servico: ServicoService) { }
 
   ngOnInit() {
     this.servico.getServicos()

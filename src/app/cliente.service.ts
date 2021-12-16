@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Http, Headers, URLSearchParams } from '@angular/http';
+
 
 import 'rxjs/add/operator/toPromise';
 
@@ -16,10 +17,10 @@ export class ClienteService {
 
   clientesUrl = 'http://localhost:8080/cliente';
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
 
-  listarTodas(): Promise<any> {
+  /*listarTodas(): Promise<any> {
     const headers = new Headers();
 
     return this.http.get(this.clientesUrl, { headers })
@@ -95,6 +96,6 @@ export class ClienteService {
 
         return resultado;
       })
-  }
+  }*/
 
 }

@@ -42,16 +42,16 @@ ngOnInit() {
 
     this.title.setTitle('Novo funcionario');
 
-    if (codigoFuncionario) {
+    /*if (codigoFuncionario) {
       this.carregarFuncionario(codigoFuncionario);
-    }
+    }*/
   }
 
   get editando() {
     return Boolean(this.funcionario.codigo)
   }
 
-  carregarFuncionario(codigo: number) {
+  /*carregarFuncionario(codigo: number) {
     this.funcionarioService.buscarPorCodigo(codigo)
       .then(funcionario => {
         this.funcionario = funcionario;
@@ -99,6 +99,6 @@ ngOnInit() {
 
   atualizarTituloEdicao() {
     this.title.setTitle(`Edição de funcionario: ${this.funcionario.nome}`);
-  }
+  }*/
 
 }

@@ -17,7 +17,7 @@ export class GclienteComponent implements OnInit {
   totalRegistros = 0;
   filtro = new ClienteFiltro();
   clientes = [];
-  @ViewChild('tabela') grid;
+  //@ViewChild('tabela') grid;
 
   constructor(
     private clienteService: ClienteService,
@@ -33,12 +33,12 @@ export class GclienteComponent implements OnInit {
   pesquisar(pagina = 0) {
     this.filtro.pagina = pagina;
 
-    this.clienteService.pesquisar(this.filtro)
+    /*this.clienteService.pesquisar(this.filtro)
       .then(resultado => {
         this.totalRegistros = resultado.total;
         this.clientes = resultado.clientes;
       })
-      .catch(erro => this.errorHandler.handle(erro));
+      .catch(erro => this.errorHandler.handle(erro));*/
   }
 
   aoMudarPagina(event: LazyLoadEvent) {
@@ -56,7 +56,7 @@ export class GclienteComponent implements OnInit {
   }
 
   excluir(cliente: any) {
-    this.clienteService.excluir(cliente.codigo)
+    /*this.clienteService.excluir(cliente.codigo)
       .then(() => {
         if (this.grid.first === 0) {
           this.pesquisar();
@@ -66,20 +66,20 @@ export class GclienteComponent implements OnInit {
 
         //this.toasty.success('Cliente excluído com sucesso');
       })
-      .catch(erro => this.errorHandler.handle(erro));
+      .catch(erro => this.errorHandler.handle(erro));*/
   }
 
   alternarStatus(cliente: any): void {
     const novoStatus = !cliente.ativo;
 
-    this.clienteService.mudarStatus(cliente.codigo, novoStatus)
+    /*this.clienteService.mudarStatus(cliente.codigo, novoStatus)
       .then(() => {
         const acao = novoStatus ? 'ativada' : 'desativada';
 
         cliente.ativo = novoStatus;
         //this.toasty.success(`Cliente ${acao} com sucesso  !`);
       })
-      .catch(erro => this.errorHandler.handle(erro));
+      .catch(erro => this.errorHandler.handle(erro));*/
   }
 
   /*

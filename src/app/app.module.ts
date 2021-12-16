@@ -22,11 +22,13 @@ import { GaleriaComponent } from './home/galeria/galeria.component';
 
 import { ClienteComponent } from './cliente/cliente.component';
 import { FuncionarioComponent } from './funcionario/funcionario.component';
-import { GservicoComponent } from './gservico/gservico.component';
+
 import { GagendaComponent } from './gagenda/gagenda.component';
 import { GclienteComponent } from './gcliente/gcliente.component';
 import { GfuncionarioComponent } from './gfuncionario/gfuncionario.component';
 import { GgservicoComponent } from './ggservico/ggservico.component';
+import { HttpClientModule } from '@angular/common/http';
+import { GservicoComponent } from './gservico/gservico.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { GgservicoComponent } from './ggservico/ggservico.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     FormsModule

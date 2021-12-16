@@ -7,3 +7,15 @@ export interface ServicoModel {
 export interface ServicoList {
     dados: ServicoModel[]; 
 }
+
+export interface RequestCreate{
+    id: number;
+    descricao: string;
+    valor: number;      
+}
+
+export interface ResponseCreate{
+    id: number;
+    descricao: string;
+    valor: number;      
+}

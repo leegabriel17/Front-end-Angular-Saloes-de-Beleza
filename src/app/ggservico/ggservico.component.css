@@ -36,15 +36,3 @@ h1:hover:before, h1:focus:before, h1:active:before {
     left: 0;
     right: 0;
 }
-
-table{
-    width: 100%;
-}
-
-table thead{
-    background-color:aquamarine;
-}
-
-table td{
-    border: 1px solid;
-}

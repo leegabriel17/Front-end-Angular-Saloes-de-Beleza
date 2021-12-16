@@ -2,6 +2,7 @@ import { Funcionario } from './model';
 import { Injectable } from '@angular/core';
 
 import 'rxjs/add/operator/toPromise';
+import { HttpClient } from '@angular/common/http';
 
 
 export class FuncionarioFiltro {
@@ -18,10 +19,10 @@ export class FuncionarioService {
 
   funcionariosUrl = 'http://localhost:8080/funcionario';
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
 
-  listarTodas(): Promise<any> {
+  /*listarTodas(): Promise<any> {
     const headers = new Headers();
 
     return this.http.get(this.funcionariosUrl, { headers })
@@ -97,5 +98,5 @@ export class FuncionarioService {
 
         return resultado;
       })
-  }
+  }*/
 }

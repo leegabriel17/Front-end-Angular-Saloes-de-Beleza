@@ -1,4 +1,3 @@
-import { GservicoComponent } from './gservico/gservico.component';
 import { ConfirmarComponent } from './agenda/confirmar/confirmar.component';
 import { FazerLoginComponent } from './fazer-login/fazer-login.component';
 import { AgendaComponent } from './agenda/agenda.component';
@@ -15,6 +14,7 @@ import { GagendaComponent } from './gagenda/gagenda.component';
 import { GclienteComponent } from './gcliente/gcliente.component';
 import { GfuncionarioComponent } from './gfuncionario/gfuncionario.component';
 import { GgservicoComponent } from './ggservico/ggservico.component';
+import { GservicoComponent } from './gservico/gservico.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },

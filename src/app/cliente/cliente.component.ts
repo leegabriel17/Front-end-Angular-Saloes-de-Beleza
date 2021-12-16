@@ -29,16 +29,16 @@ export class ClienteComponent implements OnInit {
 
     this.title.setTitle('Novo cliente');
 
-    if (codigoCliente) {
+    /*if (codigoCliente) {
       this.carregarCliente(codigoCliente);
-    }
+    }*/
   }
 
   get editando() {
     return Boolean(this.cliente.codigo)
   }
 
-  carregarCliente(codigo: number) {
+  /*carregarCliente(codigo: number) {
     this.clienteService.buscarPorCodigo(codigo)
       .then(cliente => {
         this.cliente = cliente;
@@ -85,6 +85,6 @@ export class ClienteComponent implements OnInit {
 
   atualizarTituloEdicao() {
     this.title.setTitle(`Edição de cliente: ${this.cliente.nome}`);
-  }
+  }*/
 
 }

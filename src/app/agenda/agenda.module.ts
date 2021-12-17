@@ -1,5 +1,3 @@
-
-
 export interface Endereco {
     bairro: string;
     cep: string;

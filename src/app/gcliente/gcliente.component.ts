@@ -1,9 +1,10 @@
 import { Title } from '@angular/platform-browser';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { LazyLoadEvent, ConfirmationService } from 'primeng/components/common/api';
+
 
 import { ErrorHandlerService } from '../error-handler.service';
+/*
 import { ClienteFiltro, ClienteService } from './../cliente.service';
 
 @Component({
@@ -17,12 +18,12 @@ export class GclienteComponent implements OnInit {
   totalRegistros = 0;
   filtro = new ClienteFiltro();
   clientes = [];
-  @ViewChild('tabela') grid;
+  //@ViewChild('tabela') grid;
 
   constructor(
     private clienteService: ClienteService,
     private errorHandler: ErrorHandlerService,
-    private confirmation: ConfirmationService,
+
     private title: Title
   ) { }
 
@@ -41,10 +42,12 @@ export class GclienteComponent implements OnInit {
       .catch(erro => this.errorHandler.handle(erro));
   }
 
+  /*
   aoMudarPagina(event: LazyLoadEvent) {
     const pagina = event.first / event.rows;
     this.pesquisar(pagina);
   }
+
 
   confirmarExclusao(cliente: any) {
     this.confirmation.confirm({
@@ -55,7 +58,7 @@ export class GclienteComponent implements OnInit {
     });
   }
 
-  excluir(cliente: any) {
+  /*excluir(cliente: any) {
     this.clienteService.excluir(cliente.codigo)
       .then(() => {
         if (this.grid.first === 0) {
@@ -131,4 +134,4 @@ export class GclienteComponent implements OnInit {
     }
     */
 
-}
+

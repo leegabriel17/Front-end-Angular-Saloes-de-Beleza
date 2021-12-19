@@ -50,8 +50,9 @@ carregarFuncionario(codigo: number): void {
 
 adicionarfuncionario(form: NgForm) {
   this.funcionarioService.adicionar(this.funcionario)
-    .then(funcionarioAdicionado => {
-      this.router.navigate(['/CfuncionarioComponent', funcionarioAdicionado.codigo]);
+    .then(funcionarioAdicionado => {      
+      alert("Criado com sucesso!");
+      this.router.navigate(['/gfuncionario']);      
     })
     .catch(erro => this.errorHander.handle(erro));
   }

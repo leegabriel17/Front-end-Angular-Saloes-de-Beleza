@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicoList } from './gservico.model';
+import { ServicoService } from './servico.service';
 
 @Component({
   selector: 'app-ggservico',
@@ -7,12 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GgservicoComponent implements OnInit {
 
-  constructor() { }
+  servicosList: ServicoList;
+
+  constructor(private servico: ServicoService) { }
 
   ngOnInit() {
+    this.servico.getServicos()
+    .subscribe(res => this.servicosList = res)
   }
 
-  editField: string;
+  /*editField: string;
     personList: Array<any> = [
       { id: 1, name: 'Aurelia Vega', age: 30},
       { id: 2, name: 'Guerra Cortez', age: 45,},
@@ -48,7 +54,7 @@ export class GgservicoComponent implements OnInit {
     }
 
     searchItems() {
-    }
+    }*/
 
 
 }

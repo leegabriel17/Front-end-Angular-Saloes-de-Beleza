@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AgendaList, AgendaModelo } from '../agenda/agenda.module';
+import { AgendaService } from '../agenda/agenda.service';
 
 @Component({
   selector: 'app-gagenda',
@@ -7,12 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GagendaComponent implements OnInit {
 
-  constructor() { }
+  agendaList: AgendaList;
+
+  constructor(private agenda: AgendaService) { }
 
   ngOnInit() {
+    this.agenda.getAgendamentos()
+    .subscribe(res => this.agendaList = res)
   }
 
-  editField: string;
+  /*editField: string;
     personList: Array<any> = [
       { id: 1, name: 'Aurelia Vega', age: 30, companyName: 'Deepends', country: 'Spain'},
       { id: 2, name: 'Guerra Cortez', age: 45, companyName: 'Insectus', country: 'USA'},
@@ -53,6 +59,6 @@ export class GagendaComponent implements OnInit {
 
     searchItems() {
      
-    }
+    }*/
 
 }

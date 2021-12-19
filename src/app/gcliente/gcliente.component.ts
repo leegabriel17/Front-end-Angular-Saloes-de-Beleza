@@ -132,6 +132,5 @@ export class GclienteComponent implements OnInit {
 
     searchItems() {
     }
-    */
 
-
+}*/

@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import {HttpClientModule} from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -21,8 +19,7 @@ import { QuemSomosComponent } from './home/quem-somos/quem-somos.component';
 import { ParceirosComponent } from './home/parceiros/parceiros.component';
 import { GaleriaComponent } from './home/galeria/galeria.component';
 
-import { ClienteComponent } from './cliente/cliente.component';
-import { FuncionarioComponent } from './funcionario/funcionario.component';
+//import { ClienteComponent } from './cliente/cliente.component';
 
 import { GagendaComponent } from './gagenda/gagenda.component';
 //import { GclienteComponent } from './gcliente/gcliente.component';

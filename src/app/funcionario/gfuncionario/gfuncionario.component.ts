@@ -1,4 +1,6 @@
+import { FuncionarioService } from '../funcionario.service';
 import { Component, OnInit } from '@angular/core';
+import { ErrorHandlerService } from 'src/app/error-handler.service';
 
 @Component({
   selector: 'app-gfuncionario',
@@ -7,12 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GfuncionarioComponent implements OnInit {
 
-  constructor() { }
+  funcionarios = [];
 
-  ngOnInit() {
+  constructor(
+    private funcionarioService: FuncionarioService,
+    private errorHandler: ErrorHandlerService) {}
+
+  ngOnInit(): void {
+    this.listarFuncionario();
   }
 
-  editField: string;
+  listarFuncionario(): void {
+    this.funcionarioService.listarTodas()
+    .then(resultado => {
+      this.funcionarios = resultado;
+    })
+    .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  excluir(funcionario: any): void {
+    this.funcionarioService.excluir(funcionario.codigo)
+    .then(result => {
+      this.listarFuncionario();
+
+      })
+      .catch(erro => this.errorHandler.handle(erro));
+  }
+
+
+
+  /*editField: string;
     personList: Array<any> = [
       { id: 1, name: 'Aurelia Vega', age: 30, companyName: 'Deepends', country: 'Spain', city: 'Madrid' },
       { id: 2, name: 'Guerra Cortez', age: 45, companyName: 'Insectus', country: 'USA', city: 'San Francisco' },
@@ -52,7 +78,7 @@ export class GfuncionarioComponent implements OnInit {
     }
 
     searchItems() {
-     
-    }
+
+    }*/
 
 }

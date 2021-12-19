@@ -1,40 +1,66 @@
+
+import { Funcionario } from './../../model';
+import { ErrorHandlerService } from './../../error-handler.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, NgForm } from '@angular/forms';
 
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-
-
-import { ErrorHandlerService } from '../error-handler.service';
-import { FuncionarioService } from './../funcionario.service';
-import { Funcionario } from '../model';
+import { FuncionarioService } from '../funcionario.service';
 
 @Component({
-  selector: 'app-funcionario',
-  templateUrl: './funcionario.component.html',
-  styleUrls: ['./funcionario.component.css']
+  selector: 'app-funcionario-cadastro',
+  templateUrl: './cfuncionario.component.html',
+  styleUrls: ['./cfuncionario.component.css']
 })
-export class FuncionarioComponent implements OnInit {
-  selectControl = new FormControl('1');
+export class CfuncionarioComponent implements OnInit {
+
   funcionario = new Funcionario();
 
-  option = [
-    { value: '1', label: 'Spa' },
-    { value: '2', label: 'Eventos' },
-    { value: '3', label: 'Cuidados Femininos' },
-    { value: '', label: 'Cuidados Masculinos' },
-  ];
+  cboEspecialidades = [];
 
   constructor(
     private funcionarioService: FuncionarioService,
-    private errorHandler: ErrorHandlerService,
+    private errorHander: ErrorHandlerService,
     private route: ActivatedRoute,
-    private router: Router,
-    private title: Title
+    private router: Router
+
   ) { }
 
-ngOnInit() {
-    this.selectControl.valueChanges.subscribe((value: any) => {
+ngOnInit(): void {
+  const codigoFuncionario = this.route.snapshot.params[`codigo`];
+  if (codigoFuncionario) {
+    this.carregarFuncionario(codigoFuncionario);
+  }
+  this.funcionario.ativo = false;
+}
+
+salvar(form: NgForm): void {
+    this.adicionarfuncionario(form);
+
+}
+
+carregarFuncionario(codigo: number): void {
+  this.funcionarioService.buscarPorCodigo(codigo)
+    .then(funcionario => {
+      this.funcionario = funcionario;
+    })
+    .catch(erro => this.errorHander.handle(erro));
+  }
+
+adicionarfuncionario(form: NgForm) {
+  this.funcionarioService.adicionar(this.funcionario)
+    .then(funcionarioAdicionado => {
+      this.router.navigate(['/CfuncionarioComponent', funcionarioAdicionado.codigo]);
+    })
+    .catch(erro => this.errorHander.handle(erro));
+  }
+}
+
+
+
+
+    /*this.selectControl.valueChanges.subscribe((value: any) => {
       console.log('Selected value:', value);
     })
 
@@ -42,16 +68,18 @@ ngOnInit() {
 
     this.title.setTitle('Novo funcionario');
 
-    /*if (codigoFuncionario) {
+    if (codigoFuncionario) {
       this.carregarFuncionario(codigoFuncionario);
-    }*/
+    }
   }
 
   get editando() {
     return Boolean(this.funcionario.codigo)
-  }
 
-  /*carregarFuncionario(codigo: number) {
+
+
+
+  carregarFuncionario(codigo: number) {
     this.funcionarioService.buscarPorCodigo(codigo)
       .then(funcionario => {
         this.funcionario = funcionario;
@@ -95,10 +123,6 @@ ngOnInit() {
       this.funcionario = new Funcionario();
     }.bind(this), 1);
 
-  }
-
-  atualizarTituloEdicao() {
-    this.title.setTitle(`Edição de funcionario: ${this.funcionario.nome}`);
   }*/
 
-}
+

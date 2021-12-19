@@ -18,8 +18,8 @@ export class Expediente {
 }
 
 export class Servico {
-  descricao: string;
-  valor: String;
+  descricao?: string;
+  valor?: string;
 }
 
 export class Endereco {
@@ -49,6 +49,19 @@ export class Funcionario {
   expediente?: ExpedienteEnum;
   endereco = new Endereco();
   ativo = true;
+
+  static toJson(funcionario: Funcionario): any {
+    return {
+
+     codigo: funcionario.codigo,
+     nome: funcionario.nome,
+     cpf: funcionario.cpf,
+     especialidade: funcionario.especialidade,
+     expediente: funcionario.expediente,
+     ativo: funcionario.ativo,
+     endereco: funcionario.endereco
+    };
+  }
 }
 
 export enum PeriodoEnum {
@@ -65,14 +78,14 @@ export enum ExpedienteEnum {
 }
 
 export enum EspecialidadeEnum {
-  RELAXAMENTO,
-  MASSAGEM,
-  CORTES_PENTEADOS,
-  MAQUIAGEM,
-  MAOS,
-  PES,
-  BARBA_BIGODE,
-  CORTE_MASCULINO
+  CABELO_CORTE,
+  CABELO_COLORACAO,
+  CABELO_LUZES,
+  CABELO_ALIZAMENTO,
+  CABELO_RECONSTRUCAO,
+  CABELO_PERMANENTE,
+  CABELO_HIDRATACAO,
+  CABELO_PINTURA
 }
 
 export class Categoria {

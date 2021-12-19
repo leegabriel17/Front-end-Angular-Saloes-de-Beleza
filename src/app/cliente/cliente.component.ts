@@ -5,40 +5,42 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ErrorHandlerService } from '../error-handler.service';
 
-import { ClienteService } from './../cliente.service';
-
+//import { ClienteService } from './../cliente.service';
+/*
 @Component({
   selector: 'app-cliente',
   templateUrl: './cliente.component.html',
   styleUrls: ['./cliente.component.css']
 })
+
 export class ClienteComponent implements OnInit {
 
   cliente = new Cliente();
 
   constructor(
-    private clienteService: ClienteService,
+    //private clienteService: ClienteService,
     private errorHandler: ErrorHandlerService,
     private route: ActivatedRoute,
     private router: Router,
     private title: Title
   ) { }
+}
 
   ngOnInit() {
     const codigoCliente = this.route.snapshot.params['codigo'];
 
     this.title.setTitle('Novo cliente');
 
-    /*if (codigoCliente) {
+    if (codigoCliente) {
       this.carregarCliente(codigoCliente);
-    }*/
+    }
   }
 
   get editando() {
     return Boolean(this.cliente.codigo)
   }
 
-  /*carregarCliente(codigo: number) {
+  carregarCliente(codigo: number) {
     this.clienteService.buscarPorCodigo(codigo)
       .then(cliente => {
         this.cliente = cliente;
@@ -50,7 +52,7 @@ export class ClienteComponent implements OnInit {
   salvar(form: FormControl) {
     if (this.editando) {
       this.atualizarCliente(form);
-    } 
+    }
     else {
       this.adicionarCliente(form);
     }
@@ -85,6 +87,5 @@ export class ClienteComponent implements OnInit {
 
   atualizarTituloEdicao() {
     this.title.setTitle(`Edição de cliente: ${this.cliente.nome}`);
-  }*/
-
-}
+  }
+}*/

@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,13 +19,14 @@ import { QuemSomosComponent } from './home/quem-somos/quem-somos.component';
 import { ParceirosComponent } from './home/parceiros/parceiros.component';
 import { GaleriaComponent } from './home/galeria/galeria.component';
 
-import { ClienteComponent } from './cliente/cliente.component';
-import { FuncionarioComponent } from './funcionario/funcionario.component';
+//import { ClienteComponent } from './cliente/cliente.component';
 
 import { GagendaComponent } from './gagenda/gagenda.component';
-import { GclienteComponent } from './gcliente/gcliente.component';
-import { GfuncionarioComponent } from './gfuncionario/gfuncionario.component';
+//import { GclienteComponent } from './gcliente/gcliente.component';
+
 import { GgservicoComponent } from './ggservico/ggservico.component';
+import { CfuncionarioComponent } from './funcionario/cfuncionario/cfuncionario.component';
+import { GfuncionarioComponent } from './funcionario/gfuncionario/gfuncionario.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GservicoComponent } from './gservico/gservico.component';
 
@@ -46,13 +46,14 @@ import { GservicoComponent } from './gservico/gservico.component';
     QuemSomosComponent,
     ParceirosComponent,
     GaleriaComponent,
-    ClienteComponent,
-    FuncionarioComponent,
+    //ClienteComponent,
+    CfuncionarioComponent,
     GservicoComponent,
     GagendaComponent,
-    GclienteComponent,
+    //GclienteComponent,
     GfuncionarioComponent,
-    GgservicoComponent,
+    GgservicoComponent
+
   ],
   imports: [
     BrowserModule,
@@ -61,6 +62,11 @@ import { GservicoComponent } from './gservico/gservico.component';
     MDBBootstrapModule.forRoot(),
     FormsModule
   ],
+  exports: [
+    GfuncionarioComponent,
+    CfuncionarioComponent
+  ],
+
   providers: [AuthService],
   bootstrap: [AppComponent]
 })

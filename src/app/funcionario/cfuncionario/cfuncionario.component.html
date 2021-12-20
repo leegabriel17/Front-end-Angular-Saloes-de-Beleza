@@ -1,7 +1,7 @@
 
   <div id="cadastro">
     <br>
-     <h1 id="titulo">Cadastro de Funcionários</h1>
+     <h1 id="titulo">Funcionários</h1>
     </div>
 
 <div class="container">
@@ -23,25 +23,26 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01">Especialidade</label>
         </div>
-        <select class="custom-select" id="cboEspecialidades" >
+        <select class="custom-select" [(ngModel)]="funcionario.especialidade" id="cboEspecialidades" >
           <option selected>Selecione...</option>
-          <option value="1">CABELO_CORTE</option>
-          <option value="2">CABELO_COLORACAO</option>
-          <option value="3">CABELO_LUZES</option>
+          <option value="SPA">SPA</option>
+          <option value="CORTE_FEMININO">CORTE FEMININO</option>
+          <option value="EVENTOS">EVENTOS</option>
+          <option value="CUIDADOS_FEMININOS">CUIDADOS FEMININOS</option>
+          <option value="CUIDADOS_MASCULINOS">CUIDADOS MASCULINOS</option>
        </select>
     </div><br>
-
-
-
     <div class="input-group mb-3">
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01">Expediente</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
+        <select class="custom-select" [(ngModel)]="funcionario.expediente" id="inputGroupSelect01">
           <option selected>Selecione...</option>
-          <option value="1">MANHA</option>
-          <option value="2">TARDE</option>
-          <option value="3">NOITE</option>
+          <option value="MANHA">MANHA</option>
+          <option value="TARDE">TARDE</option>
+          <option value="NOITE">NOITE</option>
+          <option value="MANHA_TARDE">INTEGRAL - MANHA/TARDE</option>
+          <option value="TARDE_NOITE">INTEGRAL - TARDE/NOITE</option>
         </select>
     </div><br>
 
@@ -82,6 +83,7 @@
   <br><br>
   <button align-items= "center" (click)="salvar()" type="submit" class="btn btn-outline-secondary">Salvar Funcionário</button><br>
   <button routerLink="/gfuncionario" type="submit" class="btn btn-outline-secondary">Gerenciar Funcionários</button>
+
 </form>
 </div>
 

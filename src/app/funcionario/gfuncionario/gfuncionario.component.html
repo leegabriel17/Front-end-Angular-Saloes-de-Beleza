@@ -30,12 +30,10 @@
           <th>Expediente</th>
           <th>Logradouro</th>
           <th>Numero</th>
-          <th>Complemento</th>
           <th>Estado</th>
           <th>Cep</th>
           <th>Cidade</th>
           <th>Bairro</th>
-          <th>Ativo</th>
         </thead>
 
         <tbody>
@@ -70,10 +68,6 @@
           </td>
           <td>
             <span class="p-column-title"></span>
-            {{funcionario.endereco.complemento}}
-          </td>
-          <td>
-            <span class="p-column-title"></span>
             {{funcionario.endereco.estado}}
           </td>
           <td>
@@ -89,12 +83,9 @@
             {{funcionario.endereco.bairro}}
           </td>
           <td>
-            <span class="p-column-title"></span>
-            {{funcionario.ativo}}
-          </td>
-          <td>
             <span class="table-edit">
-              <button type="button" mdbBtn color="pg-blue" rounded="true" size="sm" class="my-0" (click)="alterar(codigo)">Alterar</button>
+              <a type="button" mdbBtn color="pg-blue" rounded="true" size="sm" class="my-0"
+              [routerLink]="['/funcionario', funcionario.codigo]" (click)="atualizar(codigo)">Alterar</a>
             </span>
             <span class="table-remove">
               <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="excluir(funcionario)">Remover</button>

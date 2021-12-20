@@ -46,4 +46,17 @@ export class FuncionarioService {
     return this.http.post<Funcionario>(`${this.funcionariosUrl}/adicionar`, Funcionario.toJson(funcionario), { headers })
       .toPromise();
   }
+
+  atualizar(funcionario: Funcionario): Promise<Funcionario> {
+    const headers = new HttpHeaders()
+      .append('Content-Type', 'application/json');
+
+    return this.http.put<any>(`${this.funcionariosUrl}/atualizar/${funcionario.codigo}`, Funcionario.toJson(funcionario), { headers })
+      .toPromise()
+      .then(response => {
+        const funcionarioAlterado = response;
+
+        return funcionarioAlterado;
+      });
+  }
 }

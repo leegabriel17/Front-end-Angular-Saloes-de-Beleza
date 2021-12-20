@@ -1,3 +1,4 @@
+import { CfuncionarioComponent } from './cfuncionario/cfuncionario.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GfuncionarioComponent } from '../funcionario/gfuncionario/gfuncionario.component';
@@ -14,7 +15,8 @@ import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
-    GfuncionarioComponent
+    GfuncionarioComponent,
+    CfuncionarioComponent
 
   ],
   imports: [
@@ -31,7 +33,8 @@ import { AppRoutingModule } from '../app-routing.module';
 
   ],
   exports: [
-    GfuncionarioComponent
+    GfuncionarioComponent,
+    CfuncionarioComponent
   ]
 })
 export class GfuncionarioModule { }

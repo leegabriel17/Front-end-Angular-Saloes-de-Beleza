@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AgendaList, AgendaModelo } from './agenda.module';
+import { AgendaList, RequestCreateAgenda, ResponseCreateAgenda } from './agenda.module';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,8 @@ export class AgendaService {
     return this.http.get<AgendaList>(this.url);
   }
 
-  createAgendamento(): void{}
+  createAgendamento(request: RequestCreateAgenda): Observable<ResponseCreateAgenda>{
+    return this.http.post<ResponseCreateAgenda>(this.url, request);
+  }
 
 }

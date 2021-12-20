@@ -55,3 +55,19 @@ export interface AgendaModelo {
 export interface AgendaList{
     dados: AgendaModelo[];
 }
+
+export interface RequestCreateAgenda{
+    cliente: string;
+    dataAgendada: string;
+    funcionario: string;
+    idAgendamento: number;
+    servicosId: number[];
+}
+
+export interface ResponseCreateAgenda{
+    cliente: Cliente;
+    dataAgendada: string;
+    funcionario: Funcionario;
+    idAgendamento: number;
+    servicos: Servico[];
+}

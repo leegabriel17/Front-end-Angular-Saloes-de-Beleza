@@ -1,7 +1,9 @@
-import { AuthService } from './../login/auth.service';
+
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Horario } from './agenda';
+import { Cliente } from './agenda';
+import { RequestCreateAgenda } from './agenda.module';
+import { AgendaService } from './agenda.service';
+
 
 @Component({
   selector: 'app-agenda',
@@ -10,33 +12,27 @@ import { Horario } from './agenda';
 })
 export class AgendaComponent implements OnInit {
 
-  private agenda: Horario = new Horario()
-  
-  logado: boolean = false;
-  deslogado: boolean = false;
+  cliente: Cliente;  
+  servicosArray = [1, 0, 0, 1, 0, 0];
 
-  verificar(){
-    this.deslogado = this.authService.offline;
-    if(this.authService.online == true){      
-      this.route.navigate(['agenda/confirmar'])
-    }
+  request: RequestCreateAgenda ={
+    cliente: '',
+    dataAgendada: '',
+    funcionario: '',
+    idAgendamento: 0,
+    servicosId: this.servicosArray
   }
 
+  constructor( private service: AgendaService){}
 
-  constructor(
-    private route: Router,
-    private authService: AuthService) { }
+  ngOnInit() {       
+  }
 
-  ngOnInit() {    
-    console.log(`Está logado? ${this.logado}`)
-    console.log(`Está deslogado? ${this.deslogado}`)
-    this.authService.mostrarLoginEmitter.subscribe(
-      mostrar => this.logado = mostrar
-    );
-    console.log(`Está logado? ${this.logado}`)
-    this.authService.esconderLoginEmitter.subscribe(
-      esconder => this.deslogado = esconder
-    )
+  salvar(){
+    this.service.createAgendamento(this.request)
+    .subscribe(res => {      
+      alert("Criado com sucesso!");
+    })
   }
 
 }

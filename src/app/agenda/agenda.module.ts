@@ -57,11 +57,11 @@ export interface AgendaList{
 }
 
 export interface RequestCreateAgenda{
-    cliente: string;
+    idAgendamento: number;    
     dataAgendada: string;
-    funcionario: string;
-    idAgendamento: number;
-    servicosId: number[];
+    servicoId: number;
+    clienteId: number;
+    funcionarioId: number;        
 }
 
 export interface ResponseCreateAgenda{

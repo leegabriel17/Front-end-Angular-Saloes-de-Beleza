@@ -1,4 +1,5 @@
 
+import { getLocaleDateTimeFormat } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from './agenda';
 import { RequestCreateAgenda } from './agenda.module';
@@ -12,16 +13,13 @@ import { AgendaService } from './agenda.service';
 })
 export class AgendaComponent implements OnInit {
 
-  cliente: Cliente;  
-  servicosArray = [1, 0, 0, 1, 0, 0];
-
-  request: RequestCreateAgenda ={
-    cliente: '',
-    dataAgendada: '',
-    funcionario: '',
-    idAgendamento: 0,
-    servicosId: this.servicosArray
-  }
+  request: RequestCreateAgenda = {
+    idAgendamento: 0,    
+    dataAgendada:'',
+    servicoId: 0,
+    clienteId: 0,
+    funcionarioId: 0
+  }  
 
   constructor( private service: AgendaService){}
 

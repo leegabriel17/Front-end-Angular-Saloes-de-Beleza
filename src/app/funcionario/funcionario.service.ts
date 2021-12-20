@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class FuncionarioService {
 
-  funcionariosUrl = 'http://localhost:8090/funcionarios';
+  funcionariosUrl = 'http://localhost:8080/funcionarios';
 
   constructor(private http: HttpClient) { }
 

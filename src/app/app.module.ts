@@ -28,7 +28,6 @@ import { GfuncionarioComponent } from './funcionario/gfuncionario/gfuncionario.c
 import { HttpClientModule } from '@angular/common/http';
 import { GservicoComponent } from './gservico/gservico.component';
 import { CclienteComponent } from './ccliente/ccliente.component';
-import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -52,8 +51,7 @@ import { UpdateComponent } from './update/update.component';
     GclienteComponent,
     GfuncionarioComponent,
     GgservicoComponent,
-    CclienteComponent,
-    UpdateComponent
+    CclienteComponent
 
   ],
   imports: [

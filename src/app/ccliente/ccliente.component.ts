@@ -47,7 +47,7 @@ export class CclienteComponent implements OnInit {
   adicionarCliente(form: NgForm) {
     this.clienteService.adicionar(this.cliente)
       .then(clienteAdicionado => {      
-        alert("Sucesso.Cliente cadastrado");
+        alert("Solicitacao realizada com sucesso!");
         this.router.navigate(['/gcliente']);      
       })
       .catch(erro => this.errorHander.handle(erro));

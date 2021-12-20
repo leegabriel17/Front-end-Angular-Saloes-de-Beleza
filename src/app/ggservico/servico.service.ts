@@ -8,7 +8,7 @@ import { RequestCreate, ResponseCreate, ServicoList, ServicoModel } from './gser
 })
 export class ServicoService {
 
-  private url = "http://localhost:8090/servicos"
+  private url = "http://localhost:8080/servicos"
 
   constructor(private http: HttpClient) { }
 

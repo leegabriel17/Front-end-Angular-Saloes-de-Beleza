@@ -8,7 +8,7 @@ import { AgendaList, AgendaModelo } from './agenda.module';
 })
 export class AgendaService {
 
-  private url = "http://localhost:8090/agendamentos"
+  private url = "http://localhost:8080/agendamentos"
 
   constructor(private http: HttpClient) { }
 

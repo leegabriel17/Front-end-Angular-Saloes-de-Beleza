@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ClienteService {
 
-  clientesUrl = 'http://localhost:8090/cliente';
+  clientesUrl = 'http://localhost:8080/cliente';
 
   constructor(private http: HttpClient) { }
 
@@ -30,7 +30,7 @@ export class ClienteService {
   }
 
   buscarPorCodigo(idCliente: number): Promise<any> {
-    return this.http.get<Cliente>(`${this.clientesUrl}/buscar/${idCliente}`)
+    return this.http.get<Cliente>(`${this.clientesUrl}/${idCliente}`)
       .toPromise()
       .then(response => {
         const cliente = response;
@@ -46,17 +46,19 @@ export class ClienteService {
     return this.http.post<Cliente>(`${this.clientesUrl}`, Cliente.toJson(cliente), { headers })
       .toPromise();
   }
-
+   
+ 
   atualizar(cliente: Cliente): Promise<Cliente> {
     const headers = new HttpHeaders()
-    headers.append('Content-Type', 'application/json');
+      .append('Content-Type', 'application/json');
 
-    return this.http.put<Cliente>(`${this.clientesUrl}/${cliente.idCliente}`, Cliente.toJson(cliente), { headers })
-      .toPromise();
-  }
+      return this.http.put<Cliente>(`${this.clientesUrl}/${cliente.idCliente}`, Cliente.toJson(cliente), { headers })
+      .toPromise()
+      .then(response => {
+        const clienteAlterado = response;
 
-  getCliente(id: number): Observable<any> {
-    return this.http.get(`${this.clientesUrl}/${id}`);
+        return clienteAlterado;
+      });
   }
 
 }

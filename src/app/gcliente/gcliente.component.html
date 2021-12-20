@@ -94,10 +94,10 @@
           </td>
           <td>
             <span class="table-edit">
-              <button type="submit" mdbBtn color="pg-blue" rounded="true" size="sm" class="my-0"  routerLinkActive="router-link-active" routerLink="/update-cliente">Alterar</button>
+              <button type="submit" mdbBtn color="pg-blue" rounded="true" size="sm" class="my-0"  [routerLink]="['/ccliente', cliente.idCliente]" (click)="atualizar(idCliente)">Alterar</button>
             </span>
             <span class="table-remove">
-              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="excluir(cliente.id)">Remover</button>
+              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="excluir(cliente)">Remover</button>
             </span>
           </td>
         </tr>

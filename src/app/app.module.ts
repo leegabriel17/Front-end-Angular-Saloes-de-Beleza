@@ -19,16 +19,16 @@ import { QuemSomosComponent } from './home/quem-somos/quem-somos.component';
 import { ParceirosComponent } from './home/parceiros/parceiros.component';
 import { GaleriaComponent } from './home/galeria/galeria.component';
 
-//import { ClienteComponent } from './cliente/cliente.component';
-
 import { GagendaComponent } from './gagenda/gagenda.component';
-//import { GclienteComponent } from './gcliente/gcliente.component';
+import { GclienteComponent } from './gcliente/gcliente.component';
 
 import { GgservicoComponent } from './ggservico/ggservico.component';
 import { CfuncionarioComponent } from './funcionario/cfuncionario/cfuncionario.component';
 import { GfuncionarioComponent } from './funcionario/gfuncionario/gfuncionario.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GservicoComponent } from './gservico/gservico.component';
+import { CclienteComponent } from './ccliente/ccliente.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -46,13 +46,14 @@ import { GservicoComponent } from './gservico/gservico.component';
     QuemSomosComponent,
     ParceirosComponent,
     GaleriaComponent,
-    //ClienteComponent,
     CfuncionarioComponent,
     GservicoComponent,
     GagendaComponent,
-    //GclienteComponent,
+    GclienteComponent,
     GfuncionarioComponent,
-    GgservicoComponent
+    GgservicoComponent,
+    CclienteComponent,
+    UpdateComponent
 
   ],
   imports: [
@@ -64,7 +65,7 @@ import { GservicoComponent } from './gservico/gservico.component';
   ],
   exports: [
     GfuncionarioComponent,
-    CfuncionarioComponent
+    CfuncionarioComponent,
   ],
 
   providers: [AuthService],

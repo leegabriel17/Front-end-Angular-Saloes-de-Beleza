@@ -8,16 +8,15 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-//import { ClienteComponent } from './cliente/cliente.component';
 
 import { GagendaComponent } from './gagenda/gagenda.component';
-//import { GclienteComponent } from './gcliente/gcliente.component';
+import { GclienteComponent } from './gcliente/gcliente.component';
 
 import { GgservicoComponent } from './ggservico/ggservico.component';
 import { CfuncionarioComponent } from './funcionario/cfuncionario/cfuncionario.component';
 import { GfuncionarioComponent } from './funcionario/gfuncionario/gfuncionario.component';
-
-
+import { CclienteComponent } from './ccliente/ccliente.component';
+import { UpdateComponent } from './update/update.component';
 
 import { GservicoComponent } from './gservico/gservico.component';
 const routes: Routes = [
@@ -28,13 +27,14 @@ const routes: Routes = [
   { path: 'produtos', component: ProdutosComponent },
   { path: 'servicos', component: ServicosComponent },
   { path: 'fazerlogin', component: FazerLoginComponent },
-  //{ path: 'cliente', component: ClienteComponent },
+  { path: 'ccliente', component: CclienteComponent },
   { path: 'funcionario', component: CfuncionarioComponent },
   { path: 'gservico', component: GservicoComponent },
-  //{ path: 'gcliente', component: GclienteComponent },
+  { path: 'gcliente', component: GclienteComponent },
   { path: 'gfuncionario', component: GfuncionarioComponent },
   { path: 'ggservico', component: GgservicoComponent },
   { path: 'gagenda', component: GagendaComponent },
+  { path: 'update-cliente', component: UpdateComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', component: PaginaNaoEncontradaComponent }
 

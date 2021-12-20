@@ -1,0 +1,74 @@
+
+<h3 class="card-header text-center font-weight-bold text-uppercase py-4">Alterar Dados - Cliente</h3>
+<form (ngSubmit)="onSubmit()">
+<div class="container">
+    <div class="md-form md-outline form-lg">
+        <label for="form-lg">Código - Cliente</label>
+        <input id="form-lg" class="form-control form-control-lg" type="number" name="nome"
+        [(ngModel)]="cliente.idCliente" #nome="ngModel" mdbInput>
+    </div>
+    
+  <div class="md-form md-outline form-lg">
+    <label for="form-lg">Nome</label>
+    <input id="form-lg" class="form-control form-control-lg" type="text" name="nome"
+    [(ngModel)]="cliente.nome" #nome="ngModel" mdbInput>
+  </div>
+
+  <div class="md-form md-outline form-lg">
+    <label for="form-lg">CPF</label>
+    <input id="form-lg" class="form-control form-control-lg" type="text" name="cpf"
+    [(ngModel)]="cliente.cpf" #nome="ngModel" mdbInput>
+  </div>
+
+  <div class="md-form md-outline form-lg">
+    <input type="number" class="form-control" id="numberInputEx" [(ngModel)]="cliente.telefone" #nome="ngModel"mdbInput>
+    <label for="form-lg">Telefone</label>
+  </div>
+
+
+  <div class="md-form md-outline form-lg">
+    <mdb-icon fas icon="envelope"></mdb-icon>
+    <input type="text" id="inputIconEx1" class="form-control" mdbInput placeholder="nome@dominio.com" [(ngModel)]="cliente.email" #nome="ngModel">
+    <label for="inputIconEx1">E-mail</label>
+    <small id="emailHelp2" class="form-text text-muted">Nunca compartilharemos seu e-mail com ninguém.</small>
+  </div>
+
+<form>
+  <div class="form-row">
+    <div class="col-7">
+      <input mdbInput type="text" class="form-control" placeholder="Cidade" name="cidade"
+      [(ngModel)]="cliente.endereco.cidade" #nome="ngModel" mdbInput>
+    </div>
+    <div class="col">
+      <input mdbInput type="text" class="form-control" placeholder="Estado" name="estado"
+      [(ngModel)]="cliente.endereco.estado" #nome="ngModel" mdbInput>
+    </div>
+    <div class="col">
+      <input mdbInput type="text" class="form-control" placeholder="CEP" name="CEP"
+      [(ngModel)]="cliente.endereco.cep" #nome="ngModel" mdbInput>
+    </div>
+  </div>
+</form>
+<br>
+<form>
+  <div class="form-row">
+    <div class="col-7">
+      <input mdbInput type="text" class="form-control" placeholder="Bairro" name="bairro"
+      [(ngModel)]="cliente.endereco.bairro" #nome="ngModel" mdbInput>
+    </div>
+    <div class="col">
+      <input mdbInput type="text" class="form-control" placeholder="Logradouro" name="logradouro"
+      [(ngModel)]="cliente.endereco.logradouro" #nome="ngModel" mdbInput>
+    </div>
+    <div class="col">
+      <input mdbInput type="number" class="form-control" placeholder="Número" name="numero"
+      [(ngModel)]="cliente.endereco.numero" #nome="ngModel" mdbInput>
+    </div>
+  </div><br><br>
+  
+    <button type="submit" (click)="atualizarCliente(cliente)" class="btn btn-success">Editar Cliente</button><br>
+    <button routerLink="/gcliente" type="submit" class="btn btn-outline-secondary">Gerenciar Clientes</button>
+</form>
+</div>
+
+

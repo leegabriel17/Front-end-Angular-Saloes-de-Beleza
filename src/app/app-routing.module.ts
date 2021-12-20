@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: 'fazerlogin', component: FazerLoginComponent },
   //{ path: 'cliente', component: ClienteComponent },
   { path: 'funcionario', component: CfuncionarioComponent },
+  { path: 'funcionario/:codigo', component: CfuncionarioComponent},
   { path: 'gservico', component: GservicoComponent },
   //{ path: 'gcliente', component: GclienteComponent },
   { path: 'gfuncionario', component: GfuncionarioComponent },

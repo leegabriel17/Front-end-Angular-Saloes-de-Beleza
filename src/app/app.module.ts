@@ -29,6 +29,8 @@ import { CfuncionarioComponent } from './funcionario/cfuncionario/cfuncionario.c
 import { GfuncionarioComponent } from './funcionario/gfuncionario/gfuncionario.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GservicoComponent } from './gservico/gservico.component';
+import { AtendimentoListagemComponent } from './atendimento/atendimento-listagem/atendimento-listagem.component';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { GservicoComponent } from './gservico/gservico.component';
     GagendaComponent,
     //GclienteComponent,
     GfuncionarioComponent,
-    GgservicoComponent
+    GgservicoComponent,
+    AtendimentoListagemComponent
 
   ],
   imports: [
@@ -64,7 +67,8 @@ import { GservicoComponent } from './gservico/gservico.component';
   ],
   exports: [
     GfuncionarioComponent,
-    CfuncionarioComponent
+    CfuncionarioComponent,
+    AtendimentoListagemComponent
   ],
 
   providers: [AuthService],

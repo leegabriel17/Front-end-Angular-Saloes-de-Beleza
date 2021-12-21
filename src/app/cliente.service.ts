@@ -46,8 +46,8 @@ export class ClienteService {
     return this.http.post<Cliente>(`${this.clientesUrl}`, Cliente.toJson(cliente), { headers })
       .toPromise();
   }
-   
- 
+
+
   atualizar(cliente: Cliente): Promise<Cliente> {
     const headers = new HttpHeaders()
       .append('Content-Type', 'application/json');

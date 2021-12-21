@@ -12,7 +12,6 @@
         id="search"
         mdbInput
       />
-      <label for="search">Buscar ...</label>
     </div>
   </div>
 </div>
@@ -40,7 +39,7 @@
         </thead>
 
         <tbody>
-        <tr *ngFor="let cliente of clientes; let id = index">
+        <tr *ngFor="let cliente of clientes; let idCliente = index">
           <td>
             <span contenteditable="true">{{cliente.idCliente}}</span>
           </td>
@@ -94,7 +93,8 @@
           </td>
           <td>
             <span class="table-edit">
-              <button type="submit" mdbBtn color="pg-blue" rounded="true" size="sm" class="my-0"  [routerLink]="['/ccliente', cliente.idCliente]" (click)="atualizar(idCliente)">Alterar</button>
+              <a type="button" mdbBtn color="pg-blue" rounded="true" size="sm" class="my-0"
+              [routerLink]="['/ccliente', cliente.idCliente]" (click)="atualizar(idCliente)">Alterar</a>
             </span>
             <span class="table-remove">
               <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="excluir(cliente)">Remover</button>

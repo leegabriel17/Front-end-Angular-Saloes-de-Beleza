@@ -55,7 +55,7 @@ import { AtendimentoListagemComponent } from './atendimento/atendimento-listagem
     GfuncionarioComponent,
     GgservicoComponent,
 
-    CclienteComponent
+    CclienteComponent,
 
     AtendimentoListagemComponent
 

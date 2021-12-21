@@ -19,18 +19,18 @@ import { QuemSomosComponent } from './home/quem-somos/quem-somos.component';
 import { ParceirosComponent } from './home/parceiros/parceiros.component';
 import { GaleriaComponent } from './home/galeria/galeria.component';
 
-//import { ClienteComponent } from './cliente/cliente.component';
-
 import { GagendaComponent } from './gagenda/gagenda.component';
-//import { GclienteComponent } from './gcliente/gcliente.component';
+import { GclienteComponent } from './gcliente/gcliente.component';
 
 import { GgservicoComponent } from './ggservico/ggservico.component';
 import { CfuncionarioComponent } from './funcionario/cfuncionario/cfuncionario.component';
 import { GfuncionarioComponent } from './funcionario/gfuncionario/gfuncionario.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GservicoComponent } from './gservico/gservico.component';
-import { AtendimentoListagemComponent } from './atendimento/atendimento-listagem/atendimento-listagem.component';
 
+import { CclienteComponent } from './ccliente/ccliente.component';
+
+import { AtendimentoListagemComponent } from './atendimento/atendimento-listagem/atendimento-listagem.component';
 
 @NgModule({
   declarations: [
@@ -48,13 +48,15 @@ import { AtendimentoListagemComponent } from './atendimento/atendimento-listagem
     QuemSomosComponent,
     ParceirosComponent,
     GaleriaComponent,
-    //ClienteComponent,
     CfuncionarioComponent,
     GservicoComponent,
     GagendaComponent,
-    //GclienteComponent,
+    GclienteComponent,
     GfuncionarioComponent,
     GgservicoComponent,
+
+    CclienteComponent
+
     AtendimentoListagemComponent
 
   ],
@@ -68,7 +70,9 @@ import { AtendimentoListagemComponent } from './atendimento/atendimento-listagem
   exports: [
     GfuncionarioComponent,
     CfuncionarioComponent,
+
     AtendimentoListagemComponent
+
   ],
 
   providers: [AuthService],

@@ -40,8 +40,21 @@ export class Cliente {
   nome?: string;
   cpf?: string;
   telefone?: string;
+  email?: string;
   endereco = new Endereco();
   ativo = true;
+
+  static toJson(cliente: Cliente): any {
+    return {
+     codigo: cliente.idCliente,
+     nome: cliente.nome,
+     cpf: cliente.cpf,
+     telefone: cliente.telefone,
+     email: cliente.email,
+     endereco: cliente.endereco,
+     ativo: cliente.ativo
+    };
+  }
 }
 
 export class Funcionario {
@@ -66,6 +79,7 @@ export class Funcionario {
     };
   }
 }
+
 
 export enum PeriodoEnum {
   MANHA,

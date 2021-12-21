@@ -1,5 +1,5 @@
 <div class="card">
-  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Gerenciar Funcionários</h3>
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Gerenciar Atendimentos</h3>
   <div class="container">
 <div class="row">
   <div class="col-md-12 mx-auto">
@@ -21,74 +21,44 @@
       </span>
       <table class="table table-bordered table-responsive-md table-striped text-center">
 
-
         <thead>
           <th>Codigo</th>
-          <th>Nome</th>
-          <th>CPF</th>
-          <th>Especialidade</th>
-          <th>Expediente</th>
-          <th>Logradouro</th>
-          <th>Numero</th>
-          <th>Estado</th>
-          <th>Cep</th>
-          <th>Cidade</th>
-          <th>Bairro</th>
+          <th class="col-data-header" dateFormat="dd/mm/yyyy HH:mm:ss">Atendimento</th>
+          <th>Código do Agendamento</th>
+          <th>Cliente</th>
+          <th>Funcionário</th>
+          <th>Serviço</th>
         </thead>
 
         <tbody>
-        <tr *ngFor="let funcionario of funcionarios; let id = index">
+        <tr *ngFor="let atendimento of atendimento; let codigo = index">
           <td>
             <span class="p-column-title"></span>
-            {{funcionario.codigo}}
+            {{atendimento.codigo}}
           </td>
           <td>
             <span class="p-column-title"></span>
-            {{funcionario.nome}}
+            {{atendimento.horarioAtendimeno}}
           </td>
           <td>
             <span class="p-column-title"></span>
-            {{funcionario.cpf}}
+            {{atendimento.agendamento.idAgendamento}}
           </td>
           <td>
             <span class="p-column-title"></span>
-            {{funcionario.especialidade}}
+            {{atendimento.cliente.nome}}
           </td>
           <td>
             <span class="p-column-title"></span>
-            {{funcionario.expediente}}
+            {{atendimento.funcionario.nome}}
           </td>
           <td>
             <span class="p-column-title"></span>
-            {{funcionario.endereco.logradouro}}
+            {{atendimento.servico.descricao}}
           </td>
           <td>
-            <span class="p-column-title"></span>
-            {{funcionario.endereco.numero}}
-          </td>
-          <td>
-            <span class="p-column-title"></span>
-            {{funcionario.endereco.estado}}
-          </td>
-          <td>
-            <span class="p-column-title"></span>
-            {{funcionario.endereco.cep}}
-          </td>
-          <td>
-            <span class="p-column-title"></span>
-            {{funcionario.endereco.cidade}}
-          </td>
-          <td>
-            <span class="p-column-title"></span>
-            {{funcionario.endereco.bairro}}
-          </td>
-          <td>
-            <span class="table-edit">
-              <a type="button" mdbBtn color="pg-blue" rounded="true" size="sm" class="my-0"
-              [routerLink]="['/funcionario', funcionario.codigo]" (click)="atualizar(codigo)">Alterar</a>
-            </span>
             <span class="table-remove">
-              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="excluir(funcionario)">Remover</button>
+              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="excluir(atendimento)">Remover</button>
             </span>
           </td>
         </tr>

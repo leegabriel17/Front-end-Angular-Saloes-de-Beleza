@@ -24,7 +24,6 @@ export class GservicoComponent implements OnInit {
     
   }
   
-
   salvar(){
     this.servico.createServico(this.request)
     .subscribe(res => {

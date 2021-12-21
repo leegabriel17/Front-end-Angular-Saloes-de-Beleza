@@ -1,3 +1,5 @@
+import * as moment from "moment";
+
 export class Horario {
   data: string;
   hora: string;
@@ -18,6 +20,7 @@ export class Expediente {
 }
 
 export class Servico {
+  id?: number;
   descricao?: string;
   valor?: string;
 }
@@ -92,14 +95,11 @@ export enum ExpedienteEnum {
 }
 
 export enum EspecialidadeEnum {
-  CABELO_CORTE,
-  CABELO_COLORACAO,
-  CABELO_LUZES,
-  CABELO_ALIZAMENTO,
-  CABELO_RECONSTRUCAO,
-  CABELO_PERMANENTE,
-  CABELO_HIDRATACAO,
-  CABELO_PINTURA
+  MANHA,
+  TARDE,
+  NOITE,
+  MANHA_TARDE,
+  TARDE_NOITE
 }
 
 export class Categoria {
@@ -116,4 +116,36 @@ export class Lancamento {
   observacao?: string;
   pessoa = new Pessoa();
   categoria = new Categoria();
+}
+
+export class Agendamento{
+  idAgendamento: number;
+  dataAgendada: Date;
+  servicos: number;
+  cliente = new Cliente();
+  funcionario = new Funcionario();
+
+}
+
+export class Atendimento{
+  codigo: number;
+  horarioAtendimeno: Date;
+  atendimentoExecutado: Boolean;
+  agendamento = new Agendamento ();
+  cliente = new Cliente ();
+  funcionario = new Funcionario ();
+  servico = new Servico();
+
+  static toJson(atendimento: Atendimento): any {
+    return {
+
+     codigo: atendimento.codigo,
+     horarioAtendimeno: moment(atendimento.horarioAtendimeno).format('DD/MM/YYYY hh:mm'),
+     atendimentoExecutado: atendimento.atendimentoExecutado,
+     agendamento: atendimento.agendamento.idAgendamento,
+     cliente: atendimento.cliente.idCliente,
+     funcionario: atendimento.funcionario.codigo,
+     servico: atendimento.servico.id
+    };
+  }
 }
